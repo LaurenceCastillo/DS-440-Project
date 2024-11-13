@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import os
 #from movie_recommender import *
 #repository will be deployed to herokus so that algorithm can be triggered by wix.
 
@@ -14,4 +15,8 @@ def run_script():
     #return jsonify(result)
 
 if __name__ == "__main__":
-    app.run()
+     # Get the port from the environment variable, default to 5000 if not set
+    port = int(os.environ.get('PORT', 5000))
+
+    # Bind to '0.0.0.0' to allow external access and bind to the specified port
+    app.run(host='0.0.0.0', port=port)
