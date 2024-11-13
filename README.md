@@ -12,6 +12,7 @@ pip install pandas
 pip install matplotlib
 pip install scipy
 pip install scikit-learn
+pip install Flask
 
 # 2. Enhanced Implementation (Due 27th October 2024)
 
