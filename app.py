@@ -5,14 +5,22 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/run-script', methods=['POST'])
-def run_script():
+#@app.route('/', methods=['POST'])
+#def home():
 
-    return 'test'
+#    return 'test'
     #return movie_recommender() #assuming move_recommender returns a csv
 
     #result = {"message": "Script ran successfully!"}
     #return jsonify(result)
+@app.route('/')
+def home():
+    return 'Welcome to the movie recommender app!'
+
+#@app.route('/run-script', methods=['POST'])
+#def run_script():
+#    return 'test'
+
 
 if __name__ == "__main__":
      # Get the port from the environment variable, default to 5000 if not set
