@@ -6,25 +6,15 @@ import subprocess
 
 app = Flask(__name__)
 
-#@app.route('/', methods=['POST'])
-#def home():
 
-#    return 'test'
-    #return movie_recommender() #assuming move_recommender returns a csv
-
-    #result = {"message": "Script ran successfully!"}
-    #return jsonify(result)
-
-
-#this part works    
-@app.route('/')
+@app.route('/') #just a welcome message to see if it works
 def home():
     return 'Welcome to the movie recommender app!'
 
 
-#@app.route('/run-script', methods=['POST'])
-def run_script():
-    data = request.get_json()
+@app.route('/run-script', methods=['POST']) 
+def run_script(): #This function will be called through Wix when the "submit" button is pressed
+    data = request.get_json() #ideally, it is supposed to 
     user_id = data.get("userId")
 
     if not user_id:
