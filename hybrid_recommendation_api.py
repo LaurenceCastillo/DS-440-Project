@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load datasets (adjust paths as needed)
-movies = pd.read_csv('movies_with_year.csv')  # Movies dataset with "year"
+movies = pd.read_csv('movies.csv')  # Movies dataset with "year"
 ratings = pd.read_csv('ratings.csv')  # Ratings dataset
 
 # Content-Based Filtering setup
