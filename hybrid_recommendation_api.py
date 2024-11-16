@@ -121,7 +121,7 @@ def hybrid_recommendations():
         return jsonify({"error": str(e)}), 500
     
 
-@app.route('/') #testing to see if it works
+@app.route('/') #welcome page when opening app from heroku
 def home():
     return "movie recommender heroku"
 

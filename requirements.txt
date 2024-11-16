@@ -7,3 +7,4 @@ scikit-surprise
 pandas
 scikit-build
 Cython
+flask-cors
