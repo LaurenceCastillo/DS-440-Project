@@ -4,55 +4,14 @@ from sklearn.metrics.pairwise import cosine_similarity
 from surprise import SVD, Dataset, Reader
 import pandas as pd
 from flask_cors import CORS
-import os
-
-import psycopg2 #for Heroku Postgre
 
 # Initialize the Flask app
 app = Flask(__name__)
 CORS(app)
 
-#Connecting database
-DATABASE_URL = os.environ['DATABASE_URL'] #automatically configured by heroku
-conn = psycopg2.connect(DATABASE_URL) #connection object
-cursor = conn.cursor() #cursor object
-
-#create table for movies and ratings data. MODIFY THIS TO FIT THE MOVIES.CSV 
-cursor.execute(""" 
-    CREATE TABLE IF NOT EXISTS movies (
-        movieId INT PRIMARY KEY,
-        title TEXT NOT NULL,
-        genres TEXT NOT NULL
-    );
-               
-    CREATE TABLE IF NOT EXISTS ratings ()
-        userId INT NOT NULL,
-        movieId INT NOT NULL,
-        rating float NOT NULL,
-        timestamp BIGINT NOT NULL
-    )
-""")
-conn.commit()
-
-#insert data
-with open('movies.csv','r') as file:
-    next(file) #skip header
-    cursor.copy_from(file,'movies',sep = ',')
-conn.commit()
-
-with open('ratings.csv','r') as file:
-    next(file) #skip header
-    cursor.copy_from(file,'ratings',sep = 'c')
-conn.commit()
-
-conn.close()
-
-#DISREGARD BECAUSE USES TOO MUCH MEMORY
 # Load datasets (adjust paths as needed)
-#movies = pd.read_csv('movies.csv')  # Movies dataset with "year" 
-#ratings = pd.read_csv('ratings.csv')  # Ratings dataset
-
-
+movies = pd.read_csv('movies.csv')  # Movies dataset with "year"
+ratings = pd.read_csv('ratings.csv')  # Ratings dataset
 
 # Content-Based Filtering setup
 tfidf = TfidfVectorizer(stop_words='english')
