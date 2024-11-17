@@ -1,1 +1,1 @@
-web: gunicorn hybrid_recommendation_api:app
+web: gunicorn -w 1 hybrid_recommendation_api:app
