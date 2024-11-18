@@ -124,7 +124,7 @@ def hybrid_recommendations():
 
 @app.route('/') #welcome page when opening app from heroku
 def home():
-    return "movie recommender heroku"
+    return "Flask server is running. Use the /hybrid-recommendations endpoint for recommendations."
 
 # Run the Flask app
 if __name__ == '__main__':
