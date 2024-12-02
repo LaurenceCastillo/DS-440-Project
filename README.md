@@ -26,16 +26,14 @@ https://sinhautkarsh51.wixsite.com/my-site-3
 
 # 3. Enhanced Implementation Two (Due 3rd November 2024)
 
-# Hybrid Model in Python:
-
 - Two .ipynb files were added:
 - 1. research.ipynb = uses tags.csv, movies.csv, and ratings.csv to create cbf.csv and cf.csv (both used in the training of our model)
   2. Untitled-1.ipynb = file containing the model training, fine tuning, and validation of our hybrid system.
 
 # 4. Final Project Implementation:
 
-- The Preferences Page code was updated
-- The Recommendations Page code was updated
+- The Preferences Page code was updated (Preferences_2.js)
+- The Recommendations Page code was updated (Recommendations_2.js)
 - hybrid_recommendation_api.py file was added for FlaskAPI implementation.
 - ngrok was used to create a custom static link which was then updated in Wix's Recommendations Page code
   
