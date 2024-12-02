@@ -37,6 +37,7 @@ https://sinhautkarsh51.wixsite.com/my-site-3
 - hybrid_recommendation_api.py file was added for FlaskAPI implementation.
 - ngrok was used to create a custom static link which was then updated in Wix's Recommendations Page code
 - Datasets: movies.csv, ratings.csv, tags.csv
+- Accessible on https://sinhautkarsh51.wixsite.com/my-site-3
   
   
 
