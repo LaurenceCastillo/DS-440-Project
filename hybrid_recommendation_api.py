@@ -9,7 +9,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# Load datasets (adjust paths as needed)
+# Load datasets 
 movies = pd.read_csv('movies_with_year.csv')  # Movies dataset with "year"
 ratings = pd.read_csv('ratings.csv')  # Ratings dataset
 
