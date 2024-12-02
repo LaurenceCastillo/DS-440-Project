@@ -21,8 +21,8 @@ https://sinhautkarsh51.wixsite.com/my-site-3
 
 # Wix Code Files
 
-### Preferences.js: Code for the Preferences page implemented using Wix's Dev Mode.
-### Recommendations.js: Code for the Recommendations page implemented using Wix's Dev Mode.
+### Preferences_2.js: Code for the Preferences page implemented using Wix's Dev Mode.
+### Recommendations_2.js: Code for the Recommendations page implemented using Wix's Dev Mode.
 
 # 3. Enhanced Implementation Two (Due 3rd November 2024)
 
