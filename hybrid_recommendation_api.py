@@ -10,9 +10,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Load datasets (adjust paths as needed)
-movies = pd.read_csv('movies.csv')  # Movies dataset with "year" 
+movies = pd.read_csv('movies_with_year.csv')  # Movies dataset with "year"
 ratings = pd.read_csv('ratings.csv')  # Ratings dataset
-
 
 # Content-Based Filtering setup
 tfidf = TfidfVectorizer(stop_words='english')
@@ -92,6 +91,10 @@ def get_cf_recommendations(user_id, oldest_year):
 
 
 # API Endpoint for Hybrid Recommendations
+@app.route('/')
+def home():
+    return "Flask server is running. Use the /hybrid-recommendations endpoint for recommendations."
+
 @app.route('/hybrid-recommendations', methods=['POST'])
 def hybrid_recommendations():
     try:
@@ -120,12 +123,8 @@ def hybrid_recommendations():
     except Exception as e:
         print(f"Error occurred: {e}")
         return jsonify({"error": str(e)}), 500
-    
 
-@app.route('/') #welcome page when opening app from heroku
-def home():
-    return "Flask server is running. Use the /hybrid-recommendations endpoint for recommendations."
 
 # Run the Flask app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)
